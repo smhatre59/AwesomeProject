@@ -1,35 +1,45 @@
-import React, {
-  Component,
-} from 'react';
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ * @flow
+ */
+
+import React, { Component } from 'react';
 import {
+  AppRegistry,
   StyleSheet,
   Text,
-  View,
+  View
 } from 'react-native';
-import {
-  Scene,
-  Reducer,
-  Router,
-  Switch,
-  Modal,
-  Actions,
-  ActionConst,
-} from 'react-native-router-flux';
-
-import Home from './pages/Home';
-import News from './pages/News';
-import Music from './pages/Music';
- class App extends Component {
+import {Scene, Router} from 'react-native-router-flux';
+import Home from './Pages/Home';
+export default class AwesomeProject extends Component {
   render() {
     return (
-      <Router>
-      <Scene key="modal" component={Modal} >
-        <Scene key="root" hideNavBar>
-          <Scene key="Home" component={Music} title="Home" initial />
+      <Router hideNavBar="true">
+        <Scene key="root">
+          <Scene key="home" component={Home} title="Home"/>
         </Scene>
-      </Scene>
-    </Router>
-            )
-          }
+      </Router>
+    );
+  }
 }
-export default App;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+  },
+  welcome: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
+  },
+  instructions: {
+    textAlign: 'center',
+    color: '#333333',
+    marginBottom: 5,
+  },
+});
