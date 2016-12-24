@@ -16,9 +16,6 @@ export default class Home extends Component {
   render() {
     return (
       <View style={{marginTop:50}}>
-          <Text>
-            ASDF
-          </Text>
       </View>
     );
   }
